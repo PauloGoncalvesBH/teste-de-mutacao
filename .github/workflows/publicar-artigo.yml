@@ -1,0 +1,22 @@
+name: Publicar artigo no dev.to
+
+on:
+  workflow_dispatch:
+  push:
+    branches: 
+      - trunk
+
+jobs:
+  publicar-artigo:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Fazer checkout
+      uses: actions/checkout@v2
+    - name: Configurar Node.js
+      uses: actions/setup-node@v1
+    - name: Publicar artigo
+      env:
+        DEV_TO_GIT_TOKEN: ${{ secrets.DEV_TO_GIT_TOKEN }}
+      run: npx dev-to-git@1.4.1
