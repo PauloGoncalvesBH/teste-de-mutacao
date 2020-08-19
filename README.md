@@ -1,7 +1,7 @@
 ---
 title: "Teste de mutação 👽: O que é e como fica a cobertura de código?"
 published: true
-description: "Quem testa os testes? Como podemos garantir a eficiência dos testes? Conheça teste de mutação, a resposta para essas perguntas"
+description: "Quem testa os testes? Como podemos garantir a eficiência dos testes? Conheça a resposta para essas perguntas"
 tags: testes, ptbr, javascript
 canonical_url:
 cover_image:
@@ -25,7 +25,7 @@ series:
 
 <h2 align="center">Who tests the tests?</h2>
 
-Quando pensamos em validar a eficiência dos testes implementados, normalmente vem à nossa mente a métrica de cobertura de código. Porém será que ela realmente é a melhor prática para garantir que os testes estão realmente testando os cenários possíveis?
+Quando pensamos em validar a eficiência dos testes implementados, normalmente o que vem à mente é a métrica de cobertura de código. Porém, será que ela realmente é a melhor prática para garantir que os testes estão realmente testando os cenários possíveis?
 
 > Cobertura de código é uma métrica que valida o quanto do código foi coberto pelos testes.
 > Ou seja, verifica quais linhas do código foram executadas ao rodar os testes e retorna o percentual de cobertura.
