@@ -153,7 +153,7 @@ Um exemplo dessa limitação é o projeto [ServeRest](https://github.com/PauloGo
 
 <h4 align="center">Adoção em grandes projetos - Case Google</h4>
 
-Essa limitação de poder computacional não impediu a adoção do teste de mutação pela Google nos seus códigos (que possuía 2 bilhões de linhas em 2018), porém ela teve que utilizar de algumas estratégias de criação da mutação.
+Essa limitação de poder computacional não impediu a adoção do teste de mutação pela Google nos seus códigos ([que possuía 2 bilhões de linhas em 2018](https://dl.acm.org/doi/pdf/10.1145/2854146)), porém ela teve que utilizar de algumas estratégias de criação da mutação.
 
 > Traditional mutation analysis is computationally prohibitive which hinders its adoption as an industry standard. In order to alleviate the computational issues, we present a diff-based probabilistic approach to mutation analysis that drastically reduces the number of mutants by omitting lines of code without statement coverage and lines that are determined to be uninteresting - we dub these arid lines.
 > _State of Mutation Testing at Google_
@@ -209,6 +209,7 @@ Os seguintes materiais forneceram conteúdo e base para a criação desse texto:
 - [Code coverage is useless](https://dev.to/johnpreese/code-coverage-is-useless-1h3h)
 - [Why code coverage is not a reliable metric](https://dev.to/conectionist/why-code-coverage-is-not-a-reliable-metric-327l)
 - [Mutation testing in 1000 characters](https://dev.to/schreiber_chris/mutation-testing-in-1000-characters-193a)
+- [Why Google Stores Billions of Lines of Code in a Single Repository](https://dl.acm.org/doi/pdf/10.1145/2854146)
 
 ---
 
