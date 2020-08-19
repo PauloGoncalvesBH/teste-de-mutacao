@@ -1,0 +1,4 @@
+{
+  "check-coverage": true,
+  "include": ["exemplo/cnh.js"]
+}
