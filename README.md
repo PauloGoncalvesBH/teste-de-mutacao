@@ -8,9 +8,22 @@ cover_image:
 series:
 ---
 
-<h3 align="center">Who tests the tests?</h3>
+## Sumário
+- [Who tests the tests?](#who-tests-the-tests)
+- [Porque cobertura de código não é confiável](#porque-cobertura-de-código-não-é-confiável)
+- [Testes de mutação](#testes-de-mutação)
+  - [Detalhe da execução](#detalhe-da-execução)
+  - [RIP Cobertura de código?](#rip-cobertura-de-código)
+  - [Desvantagem](#desvantagem)
+    - [Adoção em grandes projetos - Case Google](#adoção-em-grandes-projetos---case-google)
+- [Verificando na prática](#verificando-na-prática)
+  - [Cobertura de código](#cobertura-de-código)
+  - [Teste de mutação](#teste-de-mutação)
+- [Fontes](#fontes)
 
 ---
+
+<h2 align="center">Who tests the tests?</h2>
 
 Quando pensamos em validar a eficiência dos testes implementados, normalmente vem à nossa mente a métrica de cobertura de código. Porém será que ela realmente é a melhor prática para garantir que os testes estão realmente testando os cenários possíveis?
 
