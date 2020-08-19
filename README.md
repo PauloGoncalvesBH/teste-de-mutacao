@@ -1,5 +1,5 @@
 ---
-title: "Testes de mutação"
+title: "Teste de mutação 👽: O que é e como fica a cobertura de código?"
 published: true
 description: "Quem testa os testes? Como podemos garantir a eficiência dos testes? Conheça teste de mutação, a resposta para essas perguntas"
 tags: testes, ptbr, javascript
