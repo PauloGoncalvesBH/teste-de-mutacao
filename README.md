@@ -1,6 +1,6 @@
 ---
 title: "Testes de mutação"
-published: false
+published: true
 description: "Quem testa os testes? Como podemos garantir a eficiência dos testes? Conheça teste de mutação, a resposta para essas perguntas"
 tags: testes, ptbr, javascript
 canonical_url:
