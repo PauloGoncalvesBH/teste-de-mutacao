@@ -5,15 +5,14 @@
     "url": "https://github.com/PauloGoncalvesBH/Testes-de-mutacao-em-JS.git"
   },
   "dependencies": {
-    "@stryker-mutator/core": "^3.3.1",
-    "@stryker-mutator/javascript-mutator": "^3.3.1",
-    "@stryker-mutator/mocha-framework": "^3.3.1",
-    "@stryker-mutator/mocha-runner": "^3.3.1",
+    "@stryker-mutator/core": "4.0.0",
+    "@stryker-mutator/mocha-runner": "4.0.0",
     "chai": "4.2.0",
-    "mocha": "8.1.1",
+    "mocha": "8.2.0",
     "nyc": "15.1.0"
   },
   "scripts": {
+    "test": "mocha --config ./exemplo/.mocharc.js",
     "test:coverage": "nyc mocha --config ./exemplo/.mocharc.js",
     "test:mutation": "stryker run ./exemplo/stryker.conf.js"
   }

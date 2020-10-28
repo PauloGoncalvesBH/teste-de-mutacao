@@ -147,7 +147,7 @@ Como o teste de mutação analisa todos os possíveis pontos que podem ser mutad
 
 Devido à necessidade de ter um alto poder computacional, o uso do teste de mutação chega a ser proibitivo em projetos médios e grandes.
 
-Um exemplo dessa limitação é o projeto [ServeRest](https://github.com/PauloGoncalvesBH/serverest). Todos os 86 testes existentes são executados em aproximadamente 550 milissegundos, enquanto os testes de mutação atuam em cima de 22 arquivos, resultando em 599 mutantes e com execução média de 19 minutos.
+Um exemplo dessa limitação é o projeto [ServeRest](https://github.com/PauloGoncalvesBH/serverest). Todos os 91 testes existentes são executados em aproximadamente 1 segundo, enquanto os testes de mutação atuam em cima de 23 arquivos, resultando em 584 mutantes e com execução média de 18 minutos.
 
 > No nosso código de exemplo a cobertura de código é executada em 9 ms enquanto o teste de mutação é executado em 3 segundos.
 
