@@ -151,7 +151,7 @@ Um exemplo dessa limitação é o projeto [ServeRest](https://github.com/PauloGo
 
 > No nosso código de exemplo a cobertura de código é executada em 9 ms enquanto o teste de mutação é executado em 3 segundos.
 
-<h4 align="center">Adoção em grandes projetos - Case Google</h4>
+<strike><h4 align="center">Adoção em grandes projetos - Case Google</h4>
 
 Essa limitação de poder computacional não impediu a adoção do teste de mutação pela Google nos seus códigos ([que possuía 2 bilhões de linhas em 2018](https://dl.acm.org/doi/pdf/10.1145/2854146)), porém ela teve que utilizar de algumas estratégias de criação da mutação.
 
@@ -202,6 +202,7 @@ O que acha de aumentar o score do teste de mutação de _60%_ para _100%_?
 Crie novo teste no arquivo [cnh.spec.js](/exemplo/cnh.spec.js) que mate 👿 as 2 mutações que estão sobrevivendo e mantenha a cobertura de código em _100%_.
 
 ---
+</strike>
 
 <h2 align="center">Fontes</h2>
 
