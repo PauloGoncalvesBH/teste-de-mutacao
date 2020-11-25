@@ -117,8 +117,8 @@ Tínhamos 100% de cobertura de código, porém o teste de mutação revelou que 
 Para que todos os 5 mutantes não sobrevivam, precisamos criar um novo teste que cubra essa brecha, como:
 
 ```js
-it('Maior de 18 anos', () => {
-  expect(podeTirarCarteiraDeMotorista(18)).to.be.true
+test('Maior de 18 anos', () => {
+  expect(podeTirarCarteiraDeMotorista(18)).toBe(true)
 })
 ```
 
