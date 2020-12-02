@@ -23,6 +23,8 @@ series:
 
 ---
 
+_Esse conteúdo foi apresentado com mais detalhes e profundidade na live do AT Talks em 25/11/20. [Para assistir clique aqui.](https://www.youtube.com/watch?v=TIiVYhoEB8o)_
+
 <h2 align="center">Who tests the tests?</h2>
 
 Quando pensamos em validar a eficiência dos testes implementados, normalmente o que vem à mente é a métrica de cobertura de código. Porém, será que ela realmente é a melhor prática para garantir que os testes estão realmente testando os cenários possíveis?
@@ -50,14 +52,14 @@ Abaixo temos um pequeno método que possui apenas 1 teste validando o seu compor
 > É perceptível que esse método possui mais de 1 cenário, porém precisamos de exemplo prático e simples para comparar _cobertura de código_ e _teste de mutação_.
 
 ```js
-// ./exemplo/cnh.js
-const podeTirarCarteiraDeMotorista = idade => {
+// ./src/cnh.js
+module.exports = podeTirarCarteiraDeMotorista = idade => {
   return idade >= 18
 }
 
-// ./exemplo/cnh.spec.js
-it('Menor de 18 anos', () => {
-  expect(podeTirarCarteiraDeMotorista(17)).to.be.false
+// ./__tests__/cnh.spec.js
+test('Deve retornar false para pessoa com menos de 18 anos', () => {
+  expect(podeTirarCarteiraDeMotorista(17)).toBe(false)
 })
 ```
 
@@ -67,7 +69,7 @@ Se verificarmos a cobertura de código do arquivo `cnh.js`, será apresentado qu
 
 #### Cobertura de código de `cnh.js`:
 
-![](https://raw.githubusercontent.com/PauloGoncalvesBH/teste-de-mutacao/trunk/images/code_coverage.png)
+![Print da cobertura de código mostrando score de 100%](https://user-images.githubusercontent.com/29241659/100894080-dc443e80-349a-11eb-9649-c7db04d27626.png)
 
 E é baseado nessa brecha da métrica de linhas executadas é que o uso do teste de mutação faz sentido.
 
@@ -89,7 +91,7 @@ Ainda não está claro? Então vamos lá.
 Abaixo está o nosso código original:
 
 ```js
-// ./exemplo/cnh.js
+// ./src/cnh.js
 const podeTirarCarteiraDeMotorista = idade => {
   return idade >= 18
 }
@@ -110,15 +112,15 @@ A cada alteração feita, todos os testes criados são executados. Se algum test
 
 Se executarmos teste de mutação utilizando o teste e código apresentados anteriormente, o resultado seria esse:
 
-![](https://raw.githubusercontent.com/PauloGoncalvesBH/teste-de-mutacao/trunk/images/mutation_test.png)
+![Print do teste de mutação mostrando score de 60%, 5 mutações criadas e sendo que 2 delas não foram detectadas pelos testes](https://user-images.githubusercontent.com/29241659/100894680-82904400-349b-11eb-8a3e-d3892cd09236.png)
 
 Tínhamos 100% de cobertura de código, porém o teste de mutação revelou que 2 mutações criadas não resultaram em quebra do nosso teste (sobreviventes), demonstrando que há brecha no nosso teste.
 
 Para que todos os 5 mutantes não sobrevivam, precisamos criar um novo teste que cubra essa brecha, como:
 
 ```js
-it('Maior de 18 anos', () => {
-  expect(podeTirarCarteiraDeMotorista(18)).to.be.true
+test('Deve retornar true para pessoa maior de 18 anos', () => {
+  expect(podeTirarCarteiraDeMotorista(18)).toBe(true)
 })
 ```
 
@@ -153,6 +155,8 @@ Um exemplo dessa limitação é o projeto [ServeRest](https://github.com/PauloGo
 
 <h4 align="center">Adoção em grandes projetos - Case Google</h4>
 
+>> **A seção _Adoção em grandes projetos - Case Google_ será atualizado com os detalhes das estratégias de testes de mutação em breve. Esses detalhes foram apresentados na [live do AT Talks](https://www.youtube.com/watch?v=TIiVYhoEB8o).**
+
 Essa limitação de poder computacional não impediu a adoção do teste de mutação pela Google nos seus códigos ([que possuía 2 bilhões de linhas em 2018](https://dl.acm.org/doi/pdf/10.1145/2854146)), porém ela teve que utilizar de algumas estratégias de criação da mutação.
 
 > Traditional mutation analysis is computationally prohibitive which hinders its adoption as an industry standard. In order to alleviate the computational issues, we present a diff-based probabilistic approach to mutation analysis that drastically reduces the number of mutants by omitting lines of code without statement coverage and lines that are determined to be uninteresting - we dub these arid lines.
@@ -177,11 +181,17 @@ git clone https://github.com/PauloGoncalvesBH/teste-de-mutacao.git
 
 Instale as dependências com o comando `npm install`.
 
-O teste foi implementado utilizando [mocha](https://www.npmjs.com/package/mocha).
+<h3 align="center">Testes</h3>
+
+O teste foi implementado utilizando [jest](https://www.npmjs.com/package/jest). Para rodar os testes execute:
+
+```sh
+npm test
+``` 
 
 <h3 align="center">Cobertura de código</h3>
 
-A cobertura de código foi gerada utilizando a biblioteca [nyc](https://www.npmjs.com/package/nyc). Para rodar os testes, execute:
+Para rodar a cobertura de código, execute:
 
 ```sh
 npm run test:coverage
@@ -189,7 +199,7 @@ npm run test:coverage
 
 <h3 align="center">Teste de mutação</h3>
 
-O teste de mutação é executado com a biblioteca [stryker](http://stryker-mutator.io), especificamente a implementação para JS. Para rodar o teste de mutação execute:
+O teste de mutação é executado com a biblioteca [stryker](https://www.npmjs.com/package/@stryker-mutator/core) e com o runner do [stryker para jest](https://www.npmjs.com/package/@stryker-mutator/jest-runner). Para rodar o teste de mutação execute:
 
 ```sh
 npm run test:mutation
@@ -199,7 +209,7 @@ npm run test:mutation
 
 O que acha de aumentar o score do teste de mutação de _60%_ para _100%_?
 
-Crie novo teste no arquivo [cnh.spec.js](/exemplo/cnh.spec.js) que mate 👿 as 2 mutações que estão sobrevivendo e mantenha a cobertura de código em _100%_.
+Crie novo teste no arquivo [cnh.spec.js](/__tests__/cnh.spec.js) que mate 👿 as 2 mutações que estão sobrevivendo e mantenha a cobertura de código em _100%_.
 
 ---
 
